@@ -1,41 +1,18 @@
 // class component
 // function component
 import React from "react";
+import UseInfo from "./UserInfo";
+import DisplayInfo from "./DisplayInfo";
 
 class MyComponent extends React.Component {
-  state = {
-    name: "hong",
-    age: 27,
-    address: "HCM",
-  };
-  handleClick = (e) => {
-    // console.log(this);
-    // console.log(">>> click me my button");
-    console.log("My name is  ", this.state.name);
-    this.setState({
-      name: "hong123",
-      age: 26,
-    });
-  };
-  handleOnChangeInput = () => {};
   render() {
+    const myInfo = ["ab", "c", "d"];
     return (
       <div>
-        my name is {this.state.name} and i'm from {this.state.address}
-        <button
-          onClick={(e) => {
-            this.handleClick(e);
-          }}
-        >
-          click me
-        </button>
-        <form action="">
-          <input
-            type="text"
-            onChange={(event) => this.handleOnChangeInput(event)}
-          />
-          <button>submit</button>
-        </form>
+        <UseInfo />
+        <br />
+        <br />
+        <DisplayInfo name={"hong111"} age={26} myInfo={myInfo} />
       </div>
     );
   }
