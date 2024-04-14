@@ -17,6 +17,7 @@ class MyComponent extends React.Component {
       age: 26,
     });
   };
+  handleOnChangeInput = () => {};
   render() {
     return (
       <div>
@@ -28,6 +29,13 @@ class MyComponent extends React.Component {
         >
           click me
         </button>
+        <form action="">
+          <input
+            type="text"
+            onChange={(event) => this.handleOnChangeInput(event)}
+          />
+          <button>submit</button>
+        </form>
       </div>
     );
   }
