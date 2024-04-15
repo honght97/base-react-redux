@@ -1,8 +1,8 @@
 import React from "react";
-class UseInfo extends React.Component {
+class AddUserInfo extends React.Component {
   state = {
-    name: "hong",
-    age: 27,
+    name: "",
+    age: "",
     address: "HCM",
   };
   handleOnChangeInput = (event) => {
@@ -19,7 +19,12 @@ class UseInfo extends React.Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
+    this.props.handleAddNewUser({
+      id: Math.floor(Math.random() * 100 + 1) + "-random",
+      name: this.state.name,
+      age: this.state.age,
+    });
   };
   render() {
     return (
@@ -45,4 +50,4 @@ class UseInfo extends React.Component {
     );
   }
 }
-export default UseInfo;
+export default AddUserInfo;
