@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DisplayInfo.scss";
 import logo from "../logo.svg";
 
@@ -34,9 +34,19 @@ import logo from "../logo.svg";
 // convert to stateless
 const DisplayInfo = (props) => {
   const { listUsers, handleDeleteUser } = props;
+  const [isShowHideListUser, setShowHideListUser] = useState(true);
+  const handleShowHideListUser = () => {
+    setShowHideListUser(!isShowHideListUser);
+  };
   return (
     <div className="display-info">
-      {true && (
+      <div>
+        <span onClick={() => handleShowHideListUser()}>
+          {" "}
+          {!isShowHideListUser ? "Show" : "Hide"} list users
+        </span>
+      </div>
+      {isShowHideListUser && (
         <>
           {listUsers.map((user, index) => {
             return (
