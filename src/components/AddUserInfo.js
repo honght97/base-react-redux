@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // class AddUserInfo extends React.Component {
 //   state = {
 //     name: "",
@@ -78,6 +78,7 @@ const AddUserInfo = (props) => {
       age: user.age,
     });
   };
+
   return (
     <>
       my name is {user.name} and i'm from {user.age}
