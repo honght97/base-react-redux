@@ -15,6 +15,15 @@ class MyComponent extends React.Component {
       name: "HarryPhamDev",
     });
   }
+  handleOnchangeInput(event) {
+    this.setState({
+      name: event.target.value,
+    });
+    // console.log(event.target.value);
+  }
+  handleOnSumbit(event) {
+    event.preventDefault();
+  }
 
   // jsx
   render() {
@@ -22,13 +31,19 @@ class MyComponent extends React.Component {
       <div>
         My name is {this.state.name} and i'm from {this.state.address}
         <br />
-        <button
-          onClick={(event) => {
-            this.handleClick(event);
+        <form
+          onSubmit={(event) => {
+            this.handleOnSumbit(event);
           }}
         >
-          click me
-        </button>
+          <input
+            onChange={(event) => {
+              this.handleOnchangeInput(event);
+            }}
+            type="text"
+          />
+          <button>Submit</button>
+        </form>
       </div>
     );
   }
