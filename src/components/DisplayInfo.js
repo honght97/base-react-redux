@@ -11,8 +11,8 @@ class DisplayInfo extends React.Component {
   render() {
     // porps => viet tat properties(thuoc tinh / tai san)
     // desctructuring array/object
-    const { listUsers } = this.props;
-    // console.log(this.props);
+    const { listUsers, handleDeleteUser } = this.props;
+    console.log(handleDeleteUser);
 
     return (
       <>
@@ -32,6 +32,13 @@ class DisplayInfo extends React.Component {
               return (
                 <li key={user.id} className={+user.age > 28 ? "red" : "green"}>
                   My name's {user.name} and i'm {user.age} years old
+                  <button
+                    onClick={() => {
+                      handleDeleteUser(user.id);
+                    }}
+                  >
+                    Delete
+                  </button>
                 </li>
               );
             })}
