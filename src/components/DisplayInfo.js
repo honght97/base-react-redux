@@ -1,8 +1,12 @@
 import React from "react";
 class DisplayInfo extends React.Component {
-  state = {
-    isShow: true,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShow: true,
+    };
+  }
+
   handleToggleListUsers() {
     this.setState({
       isShow: !this.state.isShow,
