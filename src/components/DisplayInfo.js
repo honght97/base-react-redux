@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // stateless => không hề có state => có thể chuyển thành function
 // statefull => khi có state => buộc phải dùng class => hook ra đời => dùng được state ngay bên trong function
 // class DisplayInfo extends React.Component {
@@ -30,9 +30,18 @@ import React from "react";
 // }
 const DisplayInfo = (props) => {
   const { listUsers, handleDeleteUser } = props;
+  const [isToggle, setIsToggle] = useState(true);
+  const handleToggle = () => {
+    setIsToggle(!isToggle);
+  };
   return (
     <>
-      {true && (
+      <div>
+        <button onClick={() => handleToggle()}>
+          {isToggle ? "Hide list users" : "Show list users"}
+        </button>
+      </div>
+      {isToggle && (
         <ul>
           {listUsers.map((user) => {
             return (
