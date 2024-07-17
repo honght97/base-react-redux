@@ -1,12 +1,28 @@
 import React from "react";
 class DisplayInfo extends React.Component {
   constructor(props) {
+    // console.log(">>> contructor 1");
     super(props);
     this.state = {
       isShow: true,
     };
   }
-
+  // componentDidMount => được chạy khi có dữ liệu trong dom
+  componentDidMount() {
+    // console.log(">>> function did mount");
+    setTimeout(function () {
+      document.title = "Title of pages";
+    }, 1000);
+  }
+  // muốn component update đến 1 thời điểm nào đó => và cần làm 1 cái gì đó khi tới thời điểm đó.
+  componentDidUpdate(prevProps, prevState, snapShot) {
+    // console.log(">>> function did update", this.props, prevProps);
+    if (this.props.listUsers !== prevProps.listUsers) {
+      if (this.props.listUsers.length === 5) {
+        alert("you got 5 users");
+      }
+    }
+  }
   handleToggleListUsers() {
     this.setState({
       isShow: !this.state.isShow,
@@ -16,8 +32,8 @@ class DisplayInfo extends React.Component {
     // porps => viet tat properties(thuoc tinh / tai san)
     // desctructuring array/object
     const { listUsers, handleDeleteUser } = this.props;
-    console.log(handleDeleteUser);
-
+    // console.log(handleDeleteUser);
+    // console.log(">>> render");
     return (
       <>
         <div>
