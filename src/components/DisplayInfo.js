@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // stateless => không hề có state => có thể chuyển thành function
 // statefull => khi có state => buộc phải dùng class => hook ra đời => dùng được state ngay bên trong function
 // class DisplayInfo extends React.Component {
@@ -34,6 +34,11 @@ const DisplayInfo = (props) => {
   const handleToggle = () => {
     setIsToggle(!isToggle);
   };
+  useEffect(() => {
+    if (listUsers.length === 0) {
+      alert("you deleted all the users");
+    }
+  }, [listUsers]);
   return (
     <>
       <div>
