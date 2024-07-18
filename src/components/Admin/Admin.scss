@@ -1,0 +1,16 @@
+.admin-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.admin-content {
+  flex: 1;
+}
+.admin-sidebar {
+  height: 100%;
+}
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
+  background-color: rgba(#2b2b2b, 0.4);
+}
+.pro-sidebar {
+  height: 100vh;
+}

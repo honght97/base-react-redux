@@ -1,16 +1,16 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  line-height: 1.3;
 }
 .app-container {
   .header-container {
     .navbar {
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      padding: 1rem 0;
       .navbar-nav {
         .nav-link {
           &.active {
@@ -19,5 +19,37 @@ body {
         }
       }
     }
+  }
+}
+.container {
+  max-width: 1535px;
+}
+.nav-link {
+  font-size: 18px;
+}
+.btn {
+  font-size: 18px;
+}
+.btn-login {
+  &:hover {
+    border-color: transparent;
+  }
+}
+.btn-signup {
+  background: #000;
+  color: #fff;
+}
+.homepage-container {
+  display: flex;
+  align-items: center;
+}
+.hero-content {
+  padding-left: 40px;
+  h1 {
+    font-size: 70px;
+  }
+  p {
+    max-width: 88%;
+    font-size: 22px;
   }
 }
