@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Sidebar from "./Sidebar";
 import { FaHeart, FaBars } from "react-icons/fa";
+import { Outlet, Link } from "react-router-dom";
 const Admin = (props) => {
   const [collapsed, setCollapsed] = useState(false);
   return (
@@ -9,11 +10,16 @@ const Admin = (props) => {
         <Sidebar collapsed={collapsed} />
       </div>
       <div className="admin-content">
-        <FaBars
-          onClick={() => {
-            setCollapsed(!collapsed);
-          }}
-        />
+        <div className="admin-header">
+          <FaBars
+            onClick={() => {
+              setCollapsed(!collapsed);
+            }}
+          />
+        </div>
+        <div className="admin-main">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

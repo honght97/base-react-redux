@@ -18,6 +18,7 @@ import {
 } from "react-icons/fa";
 import sidebarBg from "../../assets/images/bg2.jpg";
 import "./Admin.scss";
+import { Link } from "react-router-dom";
 const Sidebar = ({ collapsed, rtl, toggled, handleToggleSidebar }) => {
   return (
     <>
@@ -53,40 +54,20 @@ const Sidebar = ({ collapsed, rtl, toggled, handleToggleSidebar }) => {
               suffix={<span className="badge red">New</span>}
             >
               Dashboard
+              <Link to="/admin" />
             </MenuItem>
-            <MenuItem icon={<FaGem />}> Components</MenuItem>
           </Menu>
           <Menu iconShape="circle">
             <SubMenu
               suffix={<span className="badge yellow">3</span>}
-              title={"withSuffix"}
+              title={"Features"}
               icon={<FaRegLaughWink />}
             >
-              <MenuItem>submenu 1</MenuItem>
-              <MenuItem>submenu 2</MenuItem>
-              <MenuItem>submenu 3</MenuItem>
-            </SubMenu>
-            <SubMenu
-              prefix={<span className="badge gray">3</span>}
-              title={"withPrefix"}
-              icon={<FaHeart />}
-            >
-              <MenuItem>submenu 1</MenuItem>
-              <MenuItem>submenu 2</MenuItem>
-              <MenuItem>submenu 3</MenuItem>
-            </SubMenu>
-            <SubMenu title={"multiLevel"} icon={<FaList />}>
-              <MenuItem>submenu 1 </MenuItem>
-              <MenuItem>submenu 2 </MenuItem>
-              <SubMenu title={`$submenu 3`}>
-                <MenuItem>submenu 3.1 </MenuItem>
-                <MenuItem>submenu 3.2 </MenuItem>
-                <SubMenu title={`$submenu 3.3`}>
-                  <MenuItem>submenu 3.3.1 </MenuItem>
-                  <MenuItem>submenu 3.3.2 </MenuItem>
-                  <MenuItem>submenu 3.3.3 </MenuItem>
-                </SubMenu>
-              </SubMenu>
+              <MenuItem>
+                Manage User <Link to="/admin/manage-user" />
+              </MenuItem>
+              <MenuItem>Manage Quiz</MenuItem>
+              <MenuItem>Manage Ask</MenuItem>
             </SubMenu>
           </Menu>
         </SidebarContent>

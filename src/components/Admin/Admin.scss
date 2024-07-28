@@ -4,6 +4,7 @@
 }
 .admin-content {
   flex: 1;
+  width: 100%;
 }
 .admin-sidebar {
   height: 100%;
@@ -13,4 +14,10 @@
 }
 .pro-sidebar {
   height: 100vh;
+}
+.admin-header {
+  // border: 1px solid green;
+}
+.admin-main {
+  // border: 1px solid red;
 }
